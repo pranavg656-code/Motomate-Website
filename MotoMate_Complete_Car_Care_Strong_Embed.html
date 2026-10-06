@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MotoMate – The Expert Car Care | Nagpur</title>
+
+<!-- Strong automotive-style typography for the full website -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#d71920;
+  --red2:#ff2630;
+  --black:#050505;
+  --dark:#0b0b0b;
+  --card:#121212;
+  --card2:#181818;
+  --line:#292929;
+  --white:#f7f7f7;
+  --muted:#9d9d9d;
+  --green:#18b866;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--black);color:#fff;
+  font-family:Inter,Arial,sans-serif;line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 36px));margin:auto}
+
+/* HEADER */
+.top{
+  background:#030303;border-bottom:1px solid #202020;
+  padding:9px 15px;text-align:center;
+  font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#999;
+}
+.top b{color:#fff}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;text-align:center;
+  min-height:760px;display:flex;align-items:center;
+  background:
+    radial-gradient(circle at 50% 25%,rgba(215,25,32,.18),transparent 33%),
+    linear-gradient(180deg,#151515 0%,#070707 72%);
+}
+.hero:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:160px;
+  background:linear-gradient(transparent,#050505);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;width:100%;padding:70px 0}
+
+/*
+  MOTOMATE WORDMARK
+  The uploaded reference is a Porsche-style automotive wordmark.
+  This styling is intentionally used ONLY for the MotoMate name.
+  If you have the actual font file (.woff/.woff2/.ttf), replace the
+  fallback stack below with @font-face for an exact font match.
+*/
+.motomate{
+  margin:0 auto 24px;
+  display:block;
+  font-family:"Porsche Next","Eurostile","Arial Black",Impact,sans-serif;
+  font-size:clamp(42px,7vw,82px);
+  line-height:.85;
+  font-weight:900;
+  letter-spacing:clamp(3px,1vw,10px);
+  text-transform:uppercase;
+  color:#fff;
+  transform:scaleX(1.05);
+}
+.motomate-sub{
+  margin-top:17px;color:#888;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:14px;letter-spacing:4px;font-weight:700;
+  text-transform:uppercase;
+}
+
+.redline{
+  width:70px;height:4px;background:var(--red);
+  margin:28px auto 22px;
+}
+
+.hero h1{
+  margin:0 auto;max-width:1000px;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(52px,8vw,105px);
+  line-height:.84;font-weight:900;letter-spacing:-2px;
+  text-transform:uppercase;
+}
+.hero h1 span{color:var(--red)}
+
+.hero-lead{
+  max-width:780px;margin:27px auto 0;
+  color:#bcbcbc;font-size:16px;
+}
+.hero-lead strong{color:#fff}
+
+.rating{
+  display:inline-flex;gap:12px;align-items:center;
+  margin-top:25px;padding:10px 17px;
+  border:1px solid #303030;background:#101010;
+  border-radius:3px;font-size:13px;
+}
+.rating strong{color:#fff}
+
+.buttons{
+  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+  margin-top:30px;
+}
+.btn{
+  min-height:53px;padding:14px 23px;
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:3px;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.call{background:var(--red);box-shadow:0 10px 30px rgba(215,25,32,.25)}
+.whatsapp{background:var(--green)}
+.maps{background:#f4f4f4;color:#111}
+
+.hero-image{
+  width:100%;height:420px;object-fit:cover;
+  margin:55px auto 0;display:block;
+  background:#111;border:1px solid #2d2d2d;border-radius:4px;
+}
+
+/* SECTION */
+.section{padding:90px 0;background:#f3f3f1;color:#111}
+.section.dark{background:#090909;color:#fff}
+.section h2{
+  margin:0;text-align:center;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(40px,5vw,62px);
+  line-height:.9;font-weight:900;text-transform:uppercase;
+}
+.section h2:after{
+  content:"";display:block;width:58px;height:3px;
+  background:var(--red);margin:18px auto 0;
+}
+.subtitle{
+  max-width:750px;margin:20px auto 46px;text-align:center;color:#666;
+}
+.dark .subtitle{color:#999}
+
+/* SERVICE GRID */
+.services{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.service{
+  min-height:185px;padding:28px;
+  background:#fff;border:1px solid #ddd;border-radius:4px;
+  transition:.2s;
+}
+.dark .service{background:var(--card);border-color:var(--line)}
+.service:hover{transform:translateY(-4px);border-color:var(--red)}
+.service h3{
+  margin:0 0 10px;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:27px;line-height:1;text-transform:uppercase;
+}
+.service p{margin:0;color:#666}
+.dark .service p{color:#aaa}
+
+/* FEATURED RESTORATION */
+.restoration{
+  background:
+    linear-gradient(100deg,rgba(0,0,0,.98),rgba(0,0,0,.78)),
+    url("YOUR-RESTORATION-HERO-IMAGE-URL") center/cover;
+  padding:100px 0;
+}
+.restoration-inner{max-width:850px}
+.eyebrow{
+  color:var(--red2);font-family:"Barlow Condensed",sans-serif;
+  font-size:17px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;
+}
+.restoration h2{
+  text-align:left;margin-top:12px;
+  font-size:clamp(48px,7vw,88px);
+}
+.restoration h2:after{margin:20px 0}
+.restoration p{color:#bbb;max-width:720px}
+
+/* PROCESS */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{text-align:center;padding:25px 12px}
+.number{
+  width:52px;height:52px;line-height:52px;margin:auto auto 16px;
+  border-radius:50%;background:var(--red);
+  font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:800;
+}
+.step h3{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:24px;text-transform:uppercase;margin:0 0 7px;
+}
+.step p{color:#999;font-size:14px}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.gallery img{
+  width:100%;height:270px;object-fit:cover;
+  border:1px solid #ddd;border-radius:4px;background:#111;
+}
+.dark .gallery img{border-color:#292929}
+
+/* STATS */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.trust-box{
+  text-align:center;padding:34px 15px;
+  border:1px solid #282828;background:#111;border-radius:4px;
+}
+.trust-box strong{
+  display:block;font-family:"Barlow Condensed",sans-serif;
+  font-size:42px;line-height:1;color:#fff;
+}
+.trust-box span{
+  display:block;margin-top:7px;color:#999;
+  font-size:12px;letter-spacing:1px;text-transform:uppercase;
+}
+
+/* CTA */
+.cta{
+  padding:90px 20px;text-align:center;
+  background:linear-gradient(135deg,#9e0d13,#df1921 55%,#a60c12);
+}
+.cta h2{
+  margin:0;font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(45px,6vw,75px);line-height:.9;
+  text-transform:uppercase;
+}
+.cta p{font-size:18px;color:#ffeaea;max-width:680px;margin:18px auto}
+.cta .maps{background:#fff}
+
+/* FOOTER */
+.footer{
+  background:#030303;padding:30px 15px;text-align:center;
+  color:#777;font-size:13px;
+}
+.footer b{color:#ddd}
+
+/* MOBILE */
+@media(max-width:850px){
+  .hero{min-height:auto}
+  .hero-content{padding:60px 0}
+  .services,.process,.gallery,.trust{grid-template-columns:1fr}
+  .hero-image{height:280px}
+  .section{padding:65px 0}
+  .restoration{padding:70px 0}
+}
+@media(max-width:520px){
+  .container{width:calc(100% - 28px)}
+  .motomate{font-size:43px;letter-spacing:3px}
+  .hero h1{font-size:53px}
+  .buttons{flex-direction:column}
+  .btn{width:100%}
+  .gallery img{height:225px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+  <b>MOTOMATE – THE EXPERT CAR CARE</b> &nbsp; • &nbsp; NAGPUR
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="container">
+
+      <!-- Porsche-style treatment ONLY for MotoMate name -->
+      <div class="motomate">MOTOMATE</div>
+      <div class="motomate-sub">THE EXPERT CAR CARE</div>
+
+      <div class="redline"></div>
+
+      <h1>Everything Your<br>Car <span>Needs.</span></h1>
+
+      <p class="hero-lead">
+        <strong>Denting • Painting • Full Restoration • Engine &amp; Mechanical • Suspension • Detailing • Ceramic • PPF</strong><br>
+        One professional workshop for complete car care in Nagpur.
+      </p>
+
+      <div class="rating">
+        ⭐ <strong>4.9★ Google Rated</strong>
+        <span>|</span>
+        <span>477+ Customers</span>
+      </div>
+
+      <div class="buttons">
+        <a class="btn call" href="tel:+917775951800">📞 Call +91 77759 51800</a>
+        <a class="btn whatsapp"
+           href="https://wa.me/917775951800?text=Hi%20MotoMate%2C%20I%20want%20a%20quotation%20for%20my%20car."
+           target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn maps"
+           href="https://www.google.com/maps/search/?api=1&query=MotoMate+The+Expert+Car+Care+Nagpur"
+           target="_blank" rel="noopener">📍 Get Directions</a>
+      </div>
+
+      <img class="hero-image"
+           src="YOUR-BEST-CAR-WORK-IMAGE-URL"
+           alt="MotoMate complete car care workshop">
+
+    </div>
+  </div>
+</section>
+
+<!-- ALL SERVICES -->
+<section class="section">
+  <div class="container">
+    <h2>Complete Car Care</h2>
+    <p class="subtitle">
+      From body restoration to mechanical repairs and premium protection,
+      MotoMate handles the complete vehicle.
+    </p>
+
+    <div class="services">
+
+      <div class="service">
+        <h3>🔨 Denting &amp; Painting</h3>
+        <p>Professional dent repair, accident repair, panel work, colour matching and full-car painting.</p>
+      </div>
+
+      <div class="service">
+        <h3>🚗 Full Car Restoration</h3>
+        <p>Complete restoration projects covering exterior, interior and mechanical condition.</p>
+      </div>
+
+      <div class="service">
+        <h3>🔧 Engine &amp; Mechanical</h3>
+        <p>Engine-side repairs, servicing, diagnostics and mechanical work.</p>
+      </div>
+
+      <div class="service">
+        <h3>🏎 Suspension &amp; Brakes</h3>
+        <p>Suspension, steering, brakes and related underbody repairs.</p>
+      </div>
+
+      <div class="service">
+        <h3>❄️ AC &amp; Electrical</h3>
+        <p>Car AC, electrical diagnosis and repair work.</p>
+      </div>
+
+      <div class="service">
+        <h3>✨ Detailing</h3>
+        <p>Professional interior and exterior detailing, polishing and finish restoration.</p>
+      </div>
+
+      <div class="service">
+        <h3>💎 Ceramic Coating</h3>
+        <p>Premium paint protection with enhanced gloss and easier maintenance.</p>
+      </div>
+
+      <div class="service">
+        <h3>🛡 PPF</h3>
+        <p>Paint Protection Film for high-impact areas and complete vehicle protection.</p>
+      </div>
+
+      <div class="service">
+        <h3>⚙️ Upgrades &amp; Accessories</h3>
+        <p>Vehicle upgrades, accessories and premium car-care enhancements.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESTORATION -->
+<section class="restoration">
+  <div class="container">
+    <div class="restoration-inner">
+      <div class="eyebrow">MotoMate Restoration Division</div>
+      <h2>Bring Your Car<br>Back To Life.</h2>
+      <p>
+        Accident-damaged vehicle, old car restoration, complete exterior
+        makeover or mechanical revival — MotoMate can take the project
+        from inspection through repair, restoration and final detailing.
+      </p>
+
+      <div class="buttons" style="justify-content:flex-start">
+        <a class="btn call" href="tel:+917775951800">📞 Discuss Your Car</a>
+        <a class="btn whatsapp"
+           href="https://wa.me/917775951800?text=Hi%20MotoMate%2C%20I%20want%20to%20discuss%20a%20car%20restoration."
+           target="_blank" rel="noopener">💬 Send Photos on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section dark">
+  <div class="container">
+    <h2>Our Process</h2>
+    <p class="subtitle">Professional attention from inspection to final delivery.</p>
+
+    <div class="process">
+      <div class="step">
+        <div class="number">1</div>
+        <h3>Inspect</h3>
+        <p>Understand the vehicle and identify the required work.</p>
+      </div>
+      <div class="step">
+        <div class="number">2</div>
+        <h3>Estimate</h3>
+        <p>Explain the job, parts and repair requirements.</p>
+      </div>
+      <div class="step">
+        <div class="number">3</div>
+        <h3>Repair</h3>
+        <p>Complete mechanical, body and electrical work.</p>
+      </div>
+      <div class="step">
+        <div class="number">4</div>
+        <h3>Finish</h3>
+        <p>Painting, detailing and protection as required.</p>
+      </div>
+      <div class="step">
+        <div class="number">5</div>
+        <h3>Deliver</h3>
+        <p>Final inspection before handing the vehicle back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK SHOWCASE -->
+<section class="section">
+  <div class="container">
+    <h2>Our Work</h2>
+    <p class="subtitle">Real vehicles. Real repairs. Real transformations.</p>
+
+    <div class="gallery">
+      <img src="YOUR-DENTING-PAINTING-IMAGE" alt="MotoMate denting and painting work">
+      <img src="YOUR-RESTORATION-IMAGE" alt="MotoMate car restoration work">
+      <img src="YOUR-MECHANICAL-IMAGE" alt="MotoMate mechanical work">
+      <img src="YOUR-DETAILING-IMAGE" alt="MotoMate detailing work">
+      <img src="YOUR-CERAMIC-IMAGE" alt="MotoMate ceramic coating work">
+      <img src="YOUR-PPF-IMAGE" alt="MotoMate PPF work">
+    </div>
+  </div>
+</section>
+
+<!-- WHY MOTOMATE -->
+<section class="section dark">
+  <div class="container">
+    <h2>Why MotoMate?</h2>
+    <p class="subtitle">A complete car-care destination instead of sending your car to multiple shops.</p>
+
+    <div class="trust">
+      <div class="trust-box"><strong>4.9★</strong><span>Google Rating</span></div>
+      <div class="trust-box"><strong>477+</strong><span>Customers</span></div>
+      <div class="trust-box"><strong>ALL</strong><span>Car Care Solutions</span></div>
+      <div class="trust-box"><strong>PRO</strong><span>Workshop</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP -->
+<section class="section">
+  <div class="container">
+    <h2>Visit Our Workshop</h2>
+    <p class="subtitle">MotoMate – The Expert Car Care, Nagpur</p>
+
+    <div class="gallery">
+      <img src="YOUR-WORKSHOP-IMAGE-1" alt="MotoMate workshop">
+      <img src="YOUR-WORKSHOP-IMAGE-2" alt="MotoMate workshop">
+      <img src="YOUR-WORKSHOP-IMAGE-3" alt="MotoMate workshop">
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section dark">
+  <div class="container" style="text-align:center">
+    <h2>Find MotoMate</h2>
+
+    <p style="color:#aaa;margin:25px auto;max-width:550px">
+      <strong style="color:#fff">MotoMate – The Expert Car Care</strong><br><br>
+      Amba Housing Society, Plot No. 2,<br>
+      Manewada Besa Ghogli Road,<br>
+      Besa Pipla, Gotal Pajri,<br>
+      Nagpur – 441108
+    </p>
+
+    <div class="buttons">
+      <a class="btn maps"
+         href="https://www.google.com/maps/search/?api=1&query=MotoMate+The+Expert+Car+Care+Nagpur"
+         target="_blank" rel="noopener">📍 Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Tell Us About Your Car.</h2>
+    <p>
+      Send photos on WhatsApp or call us. We'll help you understand
+      the work your car needs.
+    </p>
+
+    <div class="buttons">
+      <a class="btn maps" href="tel:+917775951800">📞 +91 77759 51800</a>
+      <a class="btn maps"
+         href="https://wa.me/917775951800?text=Hi%20MotoMate%2C%20I%20want%20a%20quotation%20for%20my%20car."
+         target="_blank" rel="noopener">💬 WhatsApp MotoMate</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © <b>MotoMate – The Expert Car Care</b> | Nagpur
+</footer>
+
+</body>
+</html>
